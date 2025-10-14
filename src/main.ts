@@ -1,15 +1,25 @@
 
 
+const BASE_URL = 'https://dummyjson.com'
 
-import {calculateDiscount} from './utils/discountcalclator';
+// GET all the products
+async function fetchProducts() {
+  try {
+    // send the request to fetch the products
+    const response = await fetch(`${BASE_URL}/products?limit=5`);
+    console.log(response);
 
-console.log(calculateDiscount(100, 10)); // Output: 10
-console.log(calculateDiscount(250, 15)); // Output: 37.5
+    // check if the response is not ok
+    if (!response.ok) {
+      throw new Error("Error fetching products");
+    }
 
-import {calculateTax} from './utils/taxCalculator';
+    // parse the data
+    const products = await response.json();
+    console.log(products);
+  } catch (e) {
+    console.error();
+  }
+}
 
-console.log(calculateTax(100, "laptops"));
-console.log(calculateTax(100, "groceries"));
-
-
-
+fetchProducts();
