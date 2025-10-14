@@ -1,4 +1,5 @@
 
+import { handleApiError } from "../utils/errorHandler";
 
 /**
  * apiService.ts
@@ -8,7 +9,7 @@
  * and also handle any errors that may occur during the request.
  */
 
-const API_URL = "https://dummyjson.com/docs/products";
+const API_URL = "https://dummyjson.com";
 
 /**
  * fetchProducts()
