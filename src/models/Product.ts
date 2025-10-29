@@ -6,15 +6,17 @@ export class Product {
     title: string;                   //--> this is the Product name
     price: number;                  //--> this is the 0riginal price of the product 
     discountPercentage: number;     //---> Discont rate (e.g, 10 means 10%)
+    category: string;
 
 
     // The constructor runs automatically when we create a new product object.
     // It assigns the values we pass into the class to the product's properties. 
-    constructor(id: number, title: string, price: number, discountPercentage: number) {
+    constructor(id: number, title: string, price: number, discountPercentage: number, category: string) {
         this.id = id;                  // 'this.id' refers to the object's 'id' property
         this.title = title;            // Assign title 
         this.price = price;            // Assign price
         this.discountPercentage = discountPercentage; // Assign dicount rate
+        this.category = category
     }
 
     // Method to display product details in the console

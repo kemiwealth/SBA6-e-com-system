@@ -121,9 +121,9 @@
 // testErrorHandling();
 
 
-import { Product } from "./models/product";
+import { Product } from "./models/Product"
 import { calculateTax } from "./utils/taxCalculator";
-import { calculateDiscount } from "./utils/discountcalclator";
+import { calculateDiscount } from "./utils/discountCalclator"
 import { APIError, handleApiError } from "./utils/errorHandler";
 
 const BASE_URL = "https://dummyjson.com";
@@ -142,7 +142,7 @@ async function fetchProducts() {
 
     // Create Product objects
     const productInstances: Product[] = productList.map(
-      (p: any) => new Product(p.id, p.title, p.price, p.discountPercentage)
+      (p: any) => new Product(p.id, p.title, p.price, p.discountPercentage, p.category)
     );
 
     // Display product details
